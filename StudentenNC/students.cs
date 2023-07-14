@@ -21,7 +21,14 @@ namespace StudentenNC
 
         public void ShowNC()
         {
-            Console.WriteLine("Der Notendurchschnitt aller Schüler beträgt: " + Durchschnitt.Average());
+            if (StudentName.Count > 0)
+            {
+                Console.WriteLine("Der Notendurchschnitt aller Schüler beträgt: " + Durchschnitt.Average());
+            }
+            else
+            {
+                Console.WriteLine("Es sind noch keine Schüler eingetragen. Bitte fügen Sie erst welche hinzu!");
+            }
         }        
     }
 }

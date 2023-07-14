@@ -34,6 +34,7 @@ namespace StudentenNC
 
                     while (addStudent == true)
                     {
+                        Console.Clear();
                         conversationLine("Sie 'haben Schüler Hinzufügen' gewählt!");
                         conversationAsk("War diese Eingabe korrekt? (ja/nein): ");
                         string getAnswer2 = Console.ReadLine().ToLower();
@@ -41,11 +42,11 @@ namespace StudentenNC
 
                         if (getAnswer2 == "ja")
                         {
-
+                            
                             conversationLine("Sie haben mit 'ja' geantwortet!");
                             spaceLine();
                             while (repeat == true)
-                            {
+                            {                                
                                 conversationAsk("Bitte geben Sie den Namen des Schülers ein: ");
                                 string getName = Console.ReadLine();
                                 conversationAsk("Bitte geben Sie nun den Notendurchschnitt an: ");
@@ -62,7 +63,7 @@ namespace StudentenNC
                                 if (getAnswer3 == "ja")
                                 {
                                     dieStudenten.AddStudenten(getName, getNC);
-                                    conversationLine("Schüler" + getName + "wurde Hinzugefügt!");
+                                    conversationLine("Schüler " + getName + " wurde Hinzugefügt!");
                                     conversationAsk("Möchten Sie einen weitern schüler Hinzufügen? (ja/Nein): ");
                                     string getAnswer4 = Console.ReadLine().ToLower();
                                     spaceLine();
@@ -78,6 +79,7 @@ namespace StudentenNC
                                         spaceLine();
                                         repeat = false;
                                         addStudent = false;
+                                        Console.Clear();
                                     }
                                     else
                                     {
@@ -96,6 +98,7 @@ namespace StudentenNC
                                     spaceLine();
                                     addStudent = false;
                                     repeat = false;
+                                    Console.Clear();
                                 }
                                 else
                                 {
@@ -109,6 +112,7 @@ namespace StudentenNC
                             conversationLine("Sie haben mit 'nein' geantwortet. Wir kehren nun zum Menü zurück!");
                             spaceLine();
                             addStudent = false;
+                            Console.Clear();
                         }
                         else
                         {
@@ -119,6 +123,7 @@ namespace StudentenNC
                 }
                 else if (getAnswer == "2")
                 {
+                    Console.Clear();
                     conversationLine("Sie haben 'Gesammtdurchschnitt berechnen' gewählt!");
                     conversationAsk("War diese Eingabe korrekt? (ja/nein): ");
                     string getAnswer4 = Console.ReadLine().ToLower();
@@ -127,13 +132,17 @@ namespace StudentenNC
                     if (getAnswer4 == "ja")
                     {
                         dieStudenten.ShowNC();
-                        conversationLine("Wir kehren nun zum Menü zurück!");
                         spaceLine();
+                        conversationLine("Bitte drücken Sie eine beliebige 'Taste' um zum Menü zurück zu kehren!");
+                        Console.ReadKey();
+                        spaceLine();
+                        Console.Clear();
                     }
                     else if (getAnswer4 == "nein")
                     {
                         conversationLine("Sie haben mit 'nein' geantwortet. Wir kehren nun zum Menü zurück!");
                         spaceLine();
+                        Console.Clear();
                     }
                     else
                     {
